@@ -16,9 +16,9 @@ def value_of_card(card):
     3.  '2' - '10' = numerical value.
     """
 
-    if card in 'JQK':
+    if card in "JQK":
         return 10
-    elif card == 'A':
+    elif card == "A":
         return 1
     else:
         return int(card)
@@ -54,7 +54,12 @@ def value_of_ace(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    return 11 if value_of_card(card_one) + value_of_card(card_two) <=10 and 'A' not in [card_one, card_two] else 1
+    return (
+        11
+        if value_of_card(card_one) + value_of_card(card_two) <= 10
+        and "A" not in [card_one, card_two]
+        else 1
+    )
 
 
 def is_blackjack(card_one, card_two):
@@ -68,7 +73,9 @@ def is_blackjack(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    return 'A' in [card_one, card_two] and len(set(['10','J','Q','K']) & set([card_one, card_two]))
+    return "A" in [card_one, card_two] and len(
+        set(["10", "J", "Q", "K"]) & set([card_one, card_two])
+    )
 
 
 def can_split_pairs(card_one, card_two):
@@ -88,4 +95,4 @@ def can_double_down(card_one, card_two):
     :return: bool - can the hand can be doubled down? (i.e. totals 9, 10 or 11 points).
     """
 
-    return value_of_card(card_one) + value_of_card(card_two) in [9,10,11]
+    return value_of_card(card_one) + value_of_card(card_two) in [9, 10, 11]

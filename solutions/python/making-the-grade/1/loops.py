@@ -18,7 +18,7 @@ def count_failed_students(student_scores):
     :return: int - count of student scores at or below 40.
     """
 
-    return sum(s<=40 for s in student_scores)
+    return sum(s <= 40 for s in student_scores)
 
 
 def above_threshold(student_scores, threshold):
@@ -29,7 +29,7 @@ def above_threshold(student_scores, threshold):
     :return: list - of integer scores that are at or above the "best" threshold.
     """
 
-    return [s for s in student_scores if s>=threshold]
+    return [s for s in student_scores if s >= threshold]
 
 
 def letter_grades(highest):
@@ -46,7 +46,7 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    return list(range(41, highest, (highest-40)//4))
+    return list(range(41, highest, (highest - 40) // 4))
 
 
 def student_ranking(student_scores, student_names):
@@ -57,7 +57,10 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
 
-    return [f'{i+1}. {n}: {s}' for i,(s,n) in enumerate(zip(student_scores,student_names))]
+    return [
+        f"{i+1}. {n}: {s}"
+        for i, (s, n) in enumerate(zip(student_scores, student_names))
+    ]
 
 
 def perfect_score(student_info):
@@ -67,5 +70,5 @@ def perfect_score(student_info):
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
 
-    perfect_scores = [t for t in student_info if t[1]==100]
+    perfect_scores = [t for t in student_info if t[1] == 100]
     return perfect_scores[0] if len(perfect_scores) else []

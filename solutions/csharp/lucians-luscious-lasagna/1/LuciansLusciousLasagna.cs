@@ -15,12 +15,12 @@ class Lasagna
     // TODO: define the 'PreparationTimeInMinutes()' method
     public int PreparationTimeInMinutes(int number_of_layers)
     {
-        return 2* number_of_layers;
+        return 2 * number_of_layers;
     }
 
     // TODO: define the 'ElapsedTimeInMinutes()' method
     public int ElapsedTimeInMinutes(int number_of_layers, int elapsed_bake_time)
     {
-         return PreparationTimeInMinutes(number_of_layers)+elapsed_bake_time;
+        return PreparationTimeInMinutes(number_of_layers) + elapsed_bake_time;
     }
 }

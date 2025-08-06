@@ -5,11 +5,11 @@ class Lasagna
 
     // TODO: define the 'RemainingMinutesInOven()' method
     public int RemainingMinutesInOven(int elapsed_bake_time) => ExpectedMinutesInOven() - elapsed_bake_time;
-  
+
     // TODO: define the 'PreparationTimeInMinutes()' method
-    public int PreparationTimeInMinutes(int number_of_layers) => 2* number_of_layers;
+    public int PreparationTimeInMinutes(int number_of_layers) => 2 * number_of_layers;
 
     // TODO: define the 'ElapsedTimeInMinutes()' method
-    public int ElapsedTimeInMinutes(int number_of_layers, int elapsed_bake_time) => PreparationTimeInMinutes(number_of_layers)+elapsed_bake_time;
+    public int ElapsedTimeInMinutes(int number_of_layers, int elapsed_bake_time) => PreparationTimeInMinutes(number_of_layers) + elapsed_bake_time;
 
 }

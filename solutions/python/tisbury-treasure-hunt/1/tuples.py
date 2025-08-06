@@ -40,7 +40,11 @@ def create_record(azara_record, rui_record):
     :return: tuple or str - the combined record (if compatible), or the string "not a match" (if incompatible).
     """
 
-    return "not a match" if not compare_records(azara_record, rui_record) else azara_record + rui_record
+    return (
+        "not a match"
+        if not compare_records(azara_record, rui_record)
+        else azara_record + rui_record
+    )
 
 
 def clean_up(combined_record_group):
@@ -54,4 +58,4 @@ def clean_up(combined_record_group):
     (see HINTS.md for an example).
     """
 
-    return "".join(f'{str((r[0],) + r[2:])}\n' for r in combined_record_group)
+    return "".join(f"{str((r[0],) + r[2:])}\n" for r in combined_record_group)

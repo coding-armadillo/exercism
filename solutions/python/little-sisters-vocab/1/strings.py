@@ -1,5 +1,7 @@
 """Functions for creating, transforming, and adding prefixes to strings."""
+
 from string import ascii_letters
+
 
 def add_prefix_un(word):
     """Take the given word and add the 'un' prefix.
@@ -8,7 +10,7 @@ def add_prefix_un(word):
     :return: str - of root word prepended with 'un'.
     """
 
-    return f'un{word}'
+    return f"un{word}"
 
 
 def make_word_groups(vocab_words):
@@ -26,7 +28,7 @@ def make_word_groups(vocab_words):
     produces the following string: 'en :: enclose :: enjoy :: enlighten'.
     """
 
-    return " :: ".join(f'{vocab_words[0]}{w}' for w in ['']+vocab_words[1:])
+    return " :: ".join(f"{vocab_words[0]}{w}" for w in [""] + vocab_words[1:])
 
 
 def remove_suffix_ness(word):
@@ -39,8 +41,8 @@ def remove_suffix_ness(word):
     """
 
     w = word[:-4] if word.endswith("ness") else word
-    if w.endswith('i'):
-        w=w[:-1]+'y'
+    if w.endswith("i"):
+        w = w[:-1] + "y"
     return w
 
 
